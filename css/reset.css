@@ -1,0 +1,55 @@
+/* Box Sizing Reset */
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+/* Typography Reset */
+body,
+h1, h2, h3, h4, h5, h6,
+p,
+ul, ol,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: inherit;
+  line-height: inherit;
+}
+
+/* Links Reset */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* List Reset */
+ul, ol {
+  list-style: none;
+}
+
+
+
+/* Form Elements Reset */
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+button {
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  background-color: transparent;
+}
