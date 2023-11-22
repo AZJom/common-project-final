@@ -55,10 +55,26 @@ main {
     margin-bottom: 20px;
 }
 
-.main-image img {
+
+
+/* Apply styling to the images */
+.main-image img,
+.grid-item img {
     max-width: 100%;
     height: auto;
+    border: 2px solid transparent; /* Add a transparent border initially */
+    border-radius: 5px;
+    transition: all 0.3s ease; /* Add transition for smooth hover effect */
 }
+
+/* Define the hover effect for the images */
+.main-image img:hover,
+.grid-item img:hover {
+    border-color: #ff7f50; /* Change border color on hover */
+    transform: scale(1.05); /* Increase size on hover */
+    box-shadow: 0 0 15px rgba(255, 127, 80, 0.3); /* Add a subtle shadow on hover */
+}
+
 
 h1 {
     color: #ff7f50;
@@ -103,11 +119,7 @@ nav a.active {
     align-items: center;
 }
 
-.grid-item img {
-    width: 100%;
-    border-radius: 5px;
-    margin-top: 20px;
-}
+
 
 footer {
     background-color: #2c3e50;
@@ -116,7 +128,15 @@ footer {
     padding: 10px;
 }
 
+/* Initially hide the skip link */
 .skip-link {
+    display: none;
+    /* Other styles for hidden link */
+}
+
+
+
+.skip-link:focus {
     top: 10px;
     left: 2px;
     font-size: small;
@@ -138,8 +158,20 @@ footer {
     }
 }
 
-@media (min-width: 800px) {
-    .skip-link {
-        display: block; 
+@media (min-width: 600px) and (max-width: 1023px) {
+    .grid-container {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+        margin-top: 30px;
+    }
+}
+
+
+/* Computer view (for screen widths larger than 1023px) */
+@media (min-width: 1024px) {
+    .grid-container {
+        grid-template-columns: repeat(4, minmax(200px, 1fr));
+        gap: 30px;
+        margin-top: 50px;
     }
 }
